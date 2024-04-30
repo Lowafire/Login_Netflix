@@ -1,0 +1,229 @@
+/*Colores*/
+$color-rojo: #E50914;
+$color-rojo-oscuro: #B20710;
+$opacidad-negro: rgba(0,0,0,0.5);
+$opacidad-negro-fuerte: rgba(0,0,0,0.65);
+
+/*Fuente Tamaño*/
+$f-botones: 1.4rem;
+$f-texto: 1.6rem;
+$f-titulos: 3rem;
+$f-peque: 1.3rem;
+
+/*Utilidades*/
+$borde-radius: 0.4rem;
+
+/*Trabajo*/
+@font-face{
+  font-family: 'Roboto-Regular';
+  src: url("../fonts/Roboto-Regular.ttf");
+}
+@font-face{
+  font-family: 'Roboto-Bold';
+  src: url("../fonts/Roboto-Bold.ttf");
+}
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+html{
+  font-family: "Roboto-Regular";
+  font-size: 62.5%;
+}
+
+body{
+  max-width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient($opacidad-negro, $opacidad-negro), url("../img/Netflix-Background.jpg");
+  background-size: 100%;
+}
+.container{
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 2%;
+  display: flex;
+  flex-direction: column;
+}
+
+/*Header*/
+header{
+  nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .nav-botones{
+      select{
+        font-family: Arial, Helvetica, sans-serif, "FontAwesome";
+        background-color: $opacidad-negro;
+        color: #ffffff;
+        font-size: $f-botones;
+        border: 1px solid gray;
+        option{
+          background-color: whitesmoke;
+          color: black;
+        }
+      }
+      .nav-boton{
+        padding: 5px 15px 5px 15px; 
+        border-radius: $borde-radius;
+        margin: 10px;
+        &:hover{
+          cursor: pointer;
+        }
+      }
+    }
+    button{
+      all:unset;
+      background-color: $color-rojo;
+      font-size: $f-botones;
+      &:hover{
+        background-color: $color-rojo-oscuro;
+      }
+    }
+  }
+  .nav-logo{
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}
+
+/*Main*/
+main{
+  margin: 0 auto;
+  padding-top: 2rem;
+  .card-formulario{
+    background-color: $opacidad-negro-fuerte;
+    width: 450px;
+    height: 779px;
+    form{
+      padding-left: 70px;
+      padding-right: 70px;
+      padding-top: 50px;
+      padding-bottom: 30%;
+      legend{
+        font-size: $f-titulos;
+        font-family: "Roboto-bold", sans-serif;
+        margin-bottom: 4rem;
+      }
+
+      .campo{
+        display: flex;
+        position: relative;
+        input{
+          flex: 1;
+          padding: 2rem;
+          margin-bottom: 1.5rem;
+          border: 1px solid white;
+          border-radius: $borde-radius;
+          transition: 0.1s ease;
+          background-color: $opacidad-negro;
+          z-index: 1111;
+          outline: none;
+          &:focus, &:valid{
+            border: 2px solid whitesmoke;
+          }
+
+          &:focus + label,
+          &:valid + label{
+            color: whitesmoke;
+            font-size: 1rem;
+            line-height: 30px;
+            transform: translate(-15px, -16px);
+          }
+        }
+        label{
+          position: absolute;
+          font-size: $f-texto;
+          padding: 1.8rem 2.8rem;
+          transition: 0.2s ease;
+          
+        }
+      }
+      .formulario-sesion{
+        display: flex;
+        flex-direction: column;
+        button{
+          flex: 1;
+          padding: 1rem;
+          font-size: $f-texto;
+          border: none;
+          border-radius: $borde-radius;
+        }
+        .formulario-boton-sesion{
+          background-color: $color-rojo;
+          &:hover{
+            cursor: pointer;
+            background-color: $color-rojo-oscuro;
+          }
+        }
+        .formulario-boton-codigo{
+          background-color: rgba(120, 120, 120, 0.5);
+          &:hover{
+            cursor: pointer;
+            background-color: rgba(100, 100, 100, 0.5);
+          }
+        }
+        p{
+          margin: 1.5rem auto;
+          font-size: $f-texto;
+        }
+        a{
+          all: unset;
+          &:hover{
+            text-decoration: underline;
+            cursor: pointer;
+          }
+        }
+
+        .check{
+          display: flex;
+          margin-top: 1rem;
+          label{
+            font-size: $f-texto;
+            margin-left: 1rem;
+          }
+          input[type=checkbox]{
+            appearance: none;
+            width: 2rem;
+            height: 2rem;
+            background-color: black;
+            border: 0.5px solid white;
+            border-radius: $borde-radius;
+            &:checked{
+              appearance: revert;
+              accent-color: white;
+            }
+          }
+        }
+        .sub{
+          margin-top: 1rem;
+          a{
+            font-family: "Roboto-Bold";
+          }
+        }
+        .contacto{
+          p{
+            font-size: $f-peque;
+            color: gray;
+            .nombre{
+              all: unset;
+              font-family: "Roboto-Bold";
+            }
+            a{
+              all: unset;
+              color: #0a62ae;
+              &:hover{
+                text-decoration: underline;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
