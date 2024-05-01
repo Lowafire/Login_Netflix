@@ -34,21 +34,23 @@ html{
 }
 
 body{
-  max-width: 100vw;
-  height: 100vh;
+  height: 100%;
   background-image: linear-gradient($opacidad-negro, $opacidad-negro), url("../img/Netflix-Background.jpg");
-  background-size: 100%;
+  background-size: 100% 100%;
+  //background:linear-gradient($opacidad-negro, $opacidad-negro), url("../img/Netflix-Background2.jpg") no-repeat center center fixed;
+  //background-size: cover;
+
 }
 .container{
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-top: 2%;
   display: flex;
   flex-direction: column;
 }
 
 /*Header*/
 header{
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 2%;
   nav{
     display: flex;
     justify-content: space-between;
@@ -227,3 +229,35 @@ main{
     }
   }
 }
+/*Footer*/
+footer{
+  margin-top: 5rem;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  background-color: $opacidad-negro-fuerte;
+  .container-footer{
+    display: grid;
+    gap: 1.5rem;
+    padding: 20px;
+    font-size: $f-botones;
+    grid-template-areas: 
+    'numero numero numero numero'
+    'frecuentes ayuda terminos privacidad'
+    'cookies informacion . .';
+  }
+  .numero{grid-area: numero;}
+  .frecuentes{grid-area: frecuentes;}
+  .ayuda{grid-area: ayuda;}
+  .terminos{grid-area: terminos;}
+  .privacidad{grid-area: privacidad;}
+  .cookies{grid-area: cookies;}
+  .informacion{grid-area: informacion;}
+
+  .numero{
+    font-family: "Roboto-Bold";
+    font-size: 1.6rem;
+  }
+}
+
